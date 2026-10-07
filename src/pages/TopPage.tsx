@@ -15,7 +15,7 @@ export default function TopPage() {
   return (
     <div className="page">
       <header className="header">
-        <h1>カメラ声メモ</h1>
+        <h1>CVメモ</h1>
         <span className="count">
           {memos.length} / {MAX_MEMOS}
         </span>

@@ -8,13 +8,13 @@ export default function DetailPage({ id }: { id: string }) {
   const handleDelete = () => {
     if (!window.confirm('このメモを削除します。よろしいですか？')) return
     removeMemo(id)
-    navigate('/')
+    navigate('/memos')
   }
 
   return (
     <div className="page">
       <header className="header">
-        <button className="btn link" onClick={() => navigate('/')}>
+        <button className="btn link" onClick={() => navigate('/memos')}>
           ← 戻る
         </button>
         <h1>メモ詳細</h1>
@@ -24,7 +24,11 @@ export default function DetailPage({ id }: { id: string }) {
         {memo ? (
           <>
             <img className="detail-image" src={memo.imageDataUrl} alt="撮影した画像" />
-            <audio className="detail-audio" controls src={memo.audioDataUrl} />
+            {memo.audioDataUrl ? (
+              <audio className="detail-audio" controls src={memo.audioDataUrl} />
+            ) : (
+              <p className="date">音声なし</p>
+            )}
             <p className="date">作成日時: {formatDate(memo.createdAt)}</p>
           </>
         ) : (

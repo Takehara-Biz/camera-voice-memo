@@ -131,10 +131,10 @@ export default function NewMemoPage() {
   }
 
   const handleSave = () => {
-    if (!image || !audio) return
+    if (!image) return
     try {
       addMemo({ imageDataUrl: image, audioDataUrl: audio })
-      navigate('/')
+      navigate('/memos')
     } catch (e) {
       setSaveError(e instanceof Error ? e.message : '保存に失敗しました')
     }
@@ -170,7 +170,7 @@ export default function NewMemoPage() {
         </section>
 
         <section className="area">
-          <h2>② 声（最大{MAX_RECORD_SEC}秒）</h2>
+          <h2>② 声（任意・最大{MAX_RECORD_SEC}秒）</h2>
           <div className="meter">
             <div
               className="meter-bar"
@@ -196,12 +196,12 @@ export default function NewMemoPage() {
       </main>
 
       <footer className="footer row">
-        <button className="btn" onClick={() => navigate('/')}>
+        <button className="btn" onClick={() => navigate('/memos')}>
           キャンセル
         </button>
         <button
           className="btn primary"
-          disabled={!image || !audio || recording}
+          disabled={!image || recording}
           onClick={handleSave}
         >
           保存

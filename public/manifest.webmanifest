@@ -1,6 +1,6 @@
 {
-  "name": "カメラ声メモ",
-  "short_name": "声カメラメモ",
+  "name": "CVメモ（カメラボイスメモ）",
+  "short_name": "CVメモ",
   "description": "カメラと声で簡単なメモを取るアプリ",
   "lang": "ja",
   "start_url": "./",

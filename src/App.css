@@ -210,3 +210,34 @@
   margin: 0;
   color: var(--muted);
 }
+
+.title-page {
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  text-align: center;
+}
+
+.title-page h1 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+.title-page .sub {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.title-page .privacy {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.title-page .btn {
+  width: 100%;
+}

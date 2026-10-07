@@ -1,5 +1,6 @@
 import './App.css'
 import { useHashRoute } from './useHashRoute'
+import TitlePage from './pages/TitlePage'
 import TopPage from './pages/TopPage'
 import NewMemoPage from './pages/NewMemoPage'
 import DetailPage from './pages/DetailPage'
@@ -11,7 +12,9 @@ export default function App() {
       return <NewMemoPage />
     case 'detail':
       return <DetailPage id={route.id} />
-    default:
+    case 'top':
       return <TopPage />
+    default:
+      return <TitlePage />
   }
 }

@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from 'react'
 
 export type Route =
+  | { name: 'title' }
   | { name: 'top' }
   | { name: 'new' }
   | { name: 'detail'; id: string }
@@ -16,10 +17,11 @@ function getHash(): string {
 
 function parse(hash: string): Route {
   const path = hash.replace(/^#/, '')
+  if (path === '/memos') return { name: 'top' }
   if (path === '/new') return { name: 'new' }
   const m = /^\/memo\/(.+)$/.exec(path)
   if (m) return { name: 'detail', id: decodeURIComponent(m[1]) }
-  return { name: 'top' }
+  return { name: 'title' }
 }
 
 export function navigate(path: string): void {
